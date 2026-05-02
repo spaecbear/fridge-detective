@@ -14,8 +14,8 @@ export default function FridgeDashboard({ items, onEaten, onDisposed, stats, onA
     <div className="screen">
       <header className="screen-header">
         <div>
-          <h1 className="app-title">🧊 Fridge Detective</h1>
-          <p className="app-subtitle">Evidence-based eating, since today.</p>
+          <h1 className="app-title">🔍 Fridge Detective</h1>
+          <p className="app-subtitle">Every leftover has a story. Some are tragedies.</p>
         </div>
       </header>
 
@@ -25,10 +25,10 @@ export default function FridgeDashboard({ items, onEaten, onDisposed, stats, onA
           <div>
             <strong>
               {urgentItems.length === 1
-                ? '1 item needs your attention today'
-                : `${urgentItems.length} items need your attention today`}
+                ? '1 suspect requires immediate action'
+                : `${urgentItems.length} suspects require immediate action`}
             </strong>
-            <p>Scroll down. Deal with them. We'll wait.</p>
+            <p>Scroll down. The evidence won't hold forever.</p>
           </div>
         </div>
       )}
@@ -38,7 +38,7 @@ export default function FridgeDashboard({ items, onEaten, onDisposed, stats, onA
           <div className="empty-icon">{mood.emoji}</div>
           <p className="empty-message">{mood.message}</p>
           <button className="btn-primary" onClick={onAddItem}>
-            Add your first suspect
+            Open your first case file
           </button>
         </div>
       ) : (

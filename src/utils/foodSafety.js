@@ -20,13 +20,13 @@ export function getFreshnessInfo(item) {
 
   let status, label, color, bgColor
   if (daysRemaining < 0) {
-    status = 'toss';    label = '💀 Toss It';    color = '#9ca3af'; bgColor = 'rgba(156,163,175,0.12)'
+    status = 'toss';      label = '☠ GONE COLD';   color = '#6b7280'; bgColor = 'rgba(107,114,128,0.18)'
   } else if (daysRemaining <= 1) {
-    status = 'eat-today'; label = '🚨 Eat Today';  color = '#f97316'; bgColor = 'rgba(249,115,22,0.12)'
+    status = 'eat-today'; label = '⚡ ACT NOW';     color = '#b91c1c'; bgColor = 'rgba(185,28,28,0.15)'
   } else if (daysRemaining <= safeWindow * 0.5) {
-    status = 'eat-soon';  label = '⚠️ Eat Soon';   color = '#f59e0b'; bgColor = 'rgba(245,158,11,0.12)'
+    status = 'eat-soon';  label = '⚠ REVIEW';      color = '#b45309'; bgColor = 'rgba(180,83,9,0.15)'
   } else {
-    status = 'fresh';     label = '✅ Fresh';       color = '#22c55e'; bgColor = 'rgba(34,197,94,0.12)'
+    status = 'fresh';     label = '📁 ACTIVE';      color = '#15803d'; bgColor = 'rgba(21,128,61,0.15)'
   }
 
   return { daysRemaining, daysSince, status, label, color, bgColor, safeWindow }

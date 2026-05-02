@@ -1,8 +1,8 @@
 export default function BottomNav({ tab, setTab, urgentCount }) {
   const tabs = [
-    { id: 'fridge',   label: 'My Fridge',     icon: '🧊' },
-    { id: 'add',      label: 'Add Item',       icon: '➕' },
-    { id: 'eat-first', label: 'Eat This First', icon: '🍽️' },
+    { id: 'fridge',    label: 'Case Files',  icon: '📁' },
+    { id: 'add',       label: 'New Suspect', icon: '📋' },
+    { id: 'eat-first', label: 'The Brief',   icon: '🔍' },
   ]
 
   return (

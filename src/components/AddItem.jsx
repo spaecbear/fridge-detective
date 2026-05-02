@@ -76,8 +76,8 @@ export default function AddItem({ onAdd, onDone }) {
     return (
       <div className="screen">
         <div className="success-state">
-          <div className="success-icon">✅</div>
-          <h2>Added to the case file.</h2>
+          <div className="success-icon">🗂️</div>
+          <h2>Case file opened.</h2>
           <p>The Detective has been notified.</p>
         </div>
       </div>
@@ -87,7 +87,7 @@ export default function AddItem({ onAdd, onDone }) {
   return (
     <div className="screen">
       <header className="screen-header">
-        <h1 className="screen-title">➕ Add a Suspect</h1>
+        <h1 className="screen-title">📋 Open a Case File</h1>
         <p className="screen-subtitle">What's lurking in your fridge?</p>
       </header>
 
@@ -157,7 +157,7 @@ export default function AddItem({ onAdd, onDone }) {
         {error && <p className="form-error">{error}</p>}
 
         <button type="submit" className="btn-primary btn-full">
-          Add to Suspects 🕵️
+          File the Evidence 🕵️
         </button>
       </form>
     </div>

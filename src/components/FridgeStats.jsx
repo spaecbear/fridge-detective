@@ -4,35 +4,35 @@ export default function FridgeStats({ stats }) {
   const savedPct = total > 0 ? Math.round((recentEaten / total) * 100) : null
 
   function streakMessage() {
-    if (recentEaten === 0 && recentTossed === 0) return "No history yet. The Detective is watching."
-    if (wasteStreak === 0) return "You tossed something today. It happens. Allegedly."
-    if (wasteStreak === 1) return "One day without waste. A promising start."
-    if (wasteStreak < 5) return `${wasteStreak} days, no casualties. You're getting somewhere.`
-    if (wasteStreak < 14) return `${wasteStreak}-day streak. The Detective is impressed.`
-    return `${wasteStreak} days. You're basically a fridge whisperer at this point.`
+    if (recentEaten === 0 && recentTossed === 0) return "No closed cases yet. The Detective is watching."
+    if (wasteStreak === 0) return "Evidence destroyed today. It happens. Even to the best detectives."
+    if (wasteStreak === 1) return "One clean day. A promising start to your record."
+    if (wasteStreak < 5) return `${wasteStreak} days, no evidence destroyed. You're building a case.`
+    if (wasteStreak < 14) return `${wasteStreak}-day clean record. The Detective is impressed.`
+    return `${wasteStreak} days. You're not just a detective — you're an institution.`
   }
 
   return (
     <div className="stats-section">
-      <h2 className="stats-title">📊 Fridge Report</h2>
+      <h2 className="stats-title">📋 Case Report</h2>
       <div className="stats-grid">
         <div className="stat-card">
-          <span className="stat-number" style={{ color: '#22c55e' }}>{recentEaten}</span>
-          <span className="stat-label">eaten this week</span>
+          <span className="stat-number" style={{ color: '#4ade80' }}>{recentEaten}</span>
+          <span className="stat-label">cases solved</span>
         </div>
         <div className="stat-card">
-          <span className="stat-number" style={{ color: '#ef4444' }}>{recentTossed}</span>
-          <span className="stat-label">tossed this week</span>
+          <span className="stat-number" style={{ color: '#f87171' }}>{recentTossed}</span>
+          <span className="stat-label">evidence destroyed</span>
         </div>
         <div className="stat-card">
-          <span className="stat-number" style={{ color: '#06b6d4' }}>
+          <span className="stat-number" style={{ color: '#fbbf24' }}>
             {savedPct !== null ? `${savedPct}%` : '—'}
           </span>
-          <span className="stat-label">save rate</span>
+          <span className="stat-label">solve rate</span>
         </div>
         <div className="stat-card">
-          <span className="stat-number" style={{ color: '#a78bfa' }}>{wasteStreak}</span>
-          <span className="stat-label">zero-waste streak</span>
+          <span className="stat-number" style={{ color: '#c084fc' }}>{wasteStreak}</span>
+          <span className="stat-label">clean record</span>
         </div>
       </div>
       <p className="streak-message">{streakMessage()}</p>

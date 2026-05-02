@@ -45,13 +45,13 @@ export default function ItemCard({ item, onEaten, onDisposed }) {
             className={`action-btn eaten-btn ${confirming === 'eaten' ? 'confirming' : ''}`}
             onClick={() => handleAction('eaten')}
           >
-            {confirming === 'eaten' ? 'Confirm?' : '🍽️ Eaten'}
+            {confirming === 'eaten' ? 'Confirm?' : '✔ Solved'}
           </button>
           <button
             className={`action-btn disposed-btn ${confirming === 'disposed' ? 'confirming' : ''}`}
             onClick={() => handleAction('disposed')}
           >
-            {confirming === 'disposed' ? 'Confirm?' : '🗑️ Toss'}
+            {confirming === 'disposed' ? 'Confirm?' : '🔥 Destroy'}
           </button>
         </div>
       </div>

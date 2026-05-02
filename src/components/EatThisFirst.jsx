@@ -41,11 +41,11 @@ export default function EatThisFirst({ items, onNavigateAdd }) {
         <div className="empty-state">
           <div className="empty-icon">🕵️</div>
           <p className="empty-message">
-            Nothing in the case file yet. Add some suspects and the Detective will
-            tell you exactly what order to eat them in.
+            No open cases. File a suspect and the Detective will brief you on
+            exactly what to handle — and when.
           </p>
           <button className="btn-primary" onClick={onNavigateAdd}>
-            Add your first item
+            Open a case file
           </button>
         </div>
       </div>
@@ -57,22 +57,22 @@ export default function EatThisFirst({ items, onNavigateAdd }) {
   return (
     <div className="screen">
       <header className="screen-header">
-        <h1 className="screen-title">🍽️ Eat This First</h1>
+        <h1 className="screen-title">📋 The Brief</h1>
         <p className="screen-subtitle">The Fridge Detective has spoken.</p>
       </header>
 
       {expired.length > 0 && (
         <section className="narrative-section">
           <div className="narrative-section-header toss-header">
-            <span>💀</span>
+            <span>🕰️</span>
             <div>
-              <h2>Past the Point of No Return</h2>
-              <p>These aren't suggestions. These are eulogies.</p>
+              <h2>Cold Cases</h2>
+              <p>The window is closed. Evidence must be destroyed.</p>
             </div>
           </div>
           <div className="narrative-list">
             {expired.map(({ item, daysRemaining }) => (
-              <NarrativeItem key={item.id} item={item} daysRemaining={daysRemaining} accent="#9ca3af" />
+              <NarrativeItem key={item.id} item={item} daysRemaining={daysRemaining} accent="#6b7280" />
             ))}
           </div>
         </section>
@@ -83,13 +83,13 @@ export default function EatThisFirst({ items, onNavigateAdd }) {
           <div className="narrative-section-header urgent-header">
             <span>🚨</span>
             <div>
-              <h2>Tonight — No Excuses</h2>
-              <p>Drop everything. These need to happen today.</p>
+              <h2>Persons of Interest</h2>
+              <p>These need to be handled tonight. No exceptions.</p>
             </div>
           </div>
           <div className="narrative-list">
             {today.map(({ item, daysRemaining }) => (
-              <NarrativeItem key={item.id} item={item} daysRemaining={daysRemaining} accent="#f97316" />
+              <NarrativeItem key={item.id} item={item} daysRemaining={daysRemaining} accent="#b91c1c" />
             ))}
           </div>
         </section>
@@ -98,15 +98,15 @@ export default function EatThisFirst({ items, onNavigateAdd }) {
       {thisWeek.length > 0 && (
         <section className="narrative-section">
           <div className="narrative-section-header soon-header">
-            <span>⏳</span>
+            <span>🔍</span>
             <div>
-              <h2>This Week — A Word of Warning</h2>
-              <p>You have time. Not unlimited time, but time.</p>
+              <h2>Under Investigation</h2>
+              <p>The clock is running. Don't let these go cold.</p>
             </div>
           </div>
           <div className="narrative-list">
             {thisWeek.map(({ item, daysRemaining }) => (
-              <NarrativeItem key={item.id} item={item} daysRemaining={daysRemaining} accent="#f59e0b" />
+              <NarrativeItem key={item.id} item={item} daysRemaining={daysRemaining} accent="#b45309" />
             ))}
           </div>
         </section>
@@ -115,15 +115,15 @@ export default function EatThisFirst({ items, onNavigateAdd }) {
       {later.length > 0 && (
         <section className="narrative-section">
           <div className="narrative-section-header fresh-header">
-            <span>✅</span>
+            <span>📁</span>
             <div>
-              <h2>You've Got Time</h2>
-              <p>These ones can wait. For now. Don't get comfortable.</p>
+              <h2>Active Files</h2>
+              <p>Stable for now. The Detective is watching.</p>
             </div>
           </div>
           <div className="narrative-list">
             {later.map(({ item, daysRemaining }) => (
-              <NarrativeItem key={item.id} item={item} daysRemaining={daysRemaining} accent="#22c55e" />
+              <NarrativeItem key={item.id} item={item} daysRemaining={daysRemaining} accent="#15803d" />
             ))}
           </div>
         </section>
@@ -133,8 +133,8 @@ export default function EatThisFirst({ items, onNavigateAdd }) {
         <p>— The Fridge Detective 🕵️</p>
         <p className="sign-off-small">
           {items.length === 1
-            ? "One item. You've got this."
-            : `${items.length} suspects. Stay focused.`}
+            ? "One open case. Close it clean."
+            : `${items.length} open cases. Don't let them go cold.`}
         </p>
       </div>
     </div>
