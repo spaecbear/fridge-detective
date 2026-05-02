@@ -97,7 +97,7 @@ export function generateNarrative(item, daysRemaining) {
 }
 
 export function getFridgeMood(items) {
-  if (items.length === 0) return { emoji: '🧊', message: "Nothing to track. Either you're very efficient or the fridge is genuinely empty. Suspicious." }
+  if (items.length === 0) return { emoji: '🕵️', message: "Nothing to track. Either you're very efficient or the fridge is genuinely empty. Suspicious." }
   const tossCount = items.filter(i => getFreshnessInfo(i).status === 'toss').length
   const eatTodayCount = items.filter(i => getFreshnessInfo(i).status === 'eat-today').length
   const freshCount = items.filter(i => getFreshnessInfo(i).status === 'fresh').length
